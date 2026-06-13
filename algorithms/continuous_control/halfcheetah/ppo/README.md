@@ -26,6 +26,14 @@ The following result comes from a single educational training run and should not
 
 Because this experiment uses a single seed and is not hyperparameter-tuned for leaderboard scores, the result is meant to demonstrate that the implementation works, not to establish a state-of-the-art comparison. The **evaluation return** is from `test.py` on `halfcheetah_ppo_final.pth` (deterministic Gaussian mean, 10 episodes).
 
+**Demo**
+
+<img src="../../../../results/continuous_control/halfcheetah/ppo/ppo.gif" width="480" alt="PPO demo">
+
+**Learning curve**
+
+<img src="../../../../results/continuous_control/halfcheetah/ppo/ppo_avg_return.png" width="560" alt="PPO learning curve">
+
 ## Visualizing results
 
 After training, evaluate and record a demo:

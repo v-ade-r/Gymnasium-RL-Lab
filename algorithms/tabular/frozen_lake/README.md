@@ -33,6 +33,34 @@ Shared training hyperparameters: `ε=1.0`, `ε_decay=0.999`, `lr=0.1`, `γ=0.9`.
 
 The point of this pair is pedagogical: **Q-learning** learns the optimal Q-values (max over next actions), while **SARSA** updates along the action actually taken — on a hazard-free map they agree; on slippery or larger maps they can diverge.
 
+#### Q-learning
+
+**Demo**
+
+<img src="../../../results/tabular/frozen_lake/q_learning.gif" width="480" alt="Q-learning demo">
+
+**Learning curve**
+
+<img src="../../../results/tabular/frozen_lake/learning_curve_Q-learning.png" width="560" alt="Q-learning learning curve">
+
+**Q-grid**
+
+<img src="../../../results/tabular/frozen_lake/Q_grid_Q_learning.png" width="480" alt="Q-learning Q-grid">
+
+#### SARSA
+
+**Demo**
+
+<img src="../../../results/tabular/frozen_lake/sarsa.gif" width="480" alt="SARSA demo">
+
+**Learning curve**
+
+<img src="../../../results/tabular/frozen_lake/learning_curve_SARSA.png" width="560" alt="SARSA learning curve">
+
+**Q-grid**
+
+<img src="../../../results/tabular/frozen_lake/Q_grid_SARSA.png" width="480" alt="SARSA Q-grid">
+
 ## Outputs
 
 Learning curves and Q-grid plots saved to [`results/tabular/frozen_lake/`](../../../results/tabular/frozen_lake/):
@@ -52,8 +80,6 @@ Q-table checkpoints saved to [`models/tabular/frozen_lake/`](../../../models/tab
 |------|--------|
 | `q_values_Q-learning.pkl` | Q-learning.py |
 | `q_values_SARSA.pkl` | SARSA.py |
-
-![Q-learning curve](../../../results/tabular/frozen_lake/learning_curve_Q-learning.png)
 
 ## Key idea
 

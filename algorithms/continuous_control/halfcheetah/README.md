@@ -62,10 +62,13 @@ implementations on the same environment.
 
 More detail: [`sac/README.md`](sac/README.md).
 
-| Artifact | Path |
-|----------|------|
-| Training curve | [`sac_avg_return_100.png`](../../../results/continuous_control/halfcheetah/sac/sac_avg_return_100.png) |
-| Demo GIF | [`sac.gif`](../../../results/continuous_control/halfcheetah/sac/sac.gif) |
+**Demo**
+
+<img src="../../../results/continuous_control/halfcheetah/sac/sac.gif" width="480" alt="SAC demo">
+
+**Learning curve**
+
+<img src="../../../results/continuous_control/halfcheetah/sac/sac_avg_return_100.png" width="560" alt="SAC learning curve">
 
 ### PPO
 
@@ -82,10 +85,13 @@ More detail: [`sac/README.md`](sac/README.md).
 
 More detail: [`ppo/README.md`](ppo/README.md).
 
-| Artifact | Path |
-|----------|------|
-| Training curve | [`ppo_avg_return.png`](../../../results/continuous_control/halfcheetah/ppo/ppo_avg_return.png) |
-| Demo GIF | [`ppo.gif`](../../../results/continuous_control/halfcheetah/ppo/ppo.gif) |
+**Demo**
+
+<img src="../../../results/continuous_control/halfcheetah/ppo/ppo.gif" width="480" alt="PPO demo">
+
+**Learning curve**
+
+<img src="../../../results/continuous_control/halfcheetah/ppo/ppo_avg_return.png" width="560" alt="PPO learning curve">
 
 ### CMA-ES
 
@@ -106,9 +112,13 @@ single-episode finalists plus the distribution mean, each averaged over 30 episo
 the distribution mean won (2,343.5 ± 502.8). The **evaluation return** is a separate
 `test_all.py cmaes` run on the saved checkpoint.
 
-| Artifact | Path |
-|----------|------|
-| Training curve (`charts/best_overall_return` vs env steps) | [`CMA-ES_best_overall_return.png`](../../../results/continuous_control/halfcheetah/evolution/CMA-ES_best_overall_return.png) |
+**Demo**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/cmaes.gif" width="480" alt="CMA-ES demo">
+
+**Learning curve**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/CMA-ES_best_overall_return.png" width="560" alt="CMA-ES learning curve">
 
 ### sNES
 
@@ -129,9 +139,13 @@ single-episode finalists plus the distribution mean, each averaged over 30 episo
 `finalist_6` won (2,950.2 ± 237.5). The **evaluation return** is a separate
 `test_all.py nes` run on the saved checkpoint (2,990.0 ± 66.3; min 2,877.2, max 3,103.4).
 
-| Artifact | Path |
-|----------|------|
-| Training curve (`charts/best_overall_return` vs env steps) | [`sNES_best_overall_return.png`](../../../results/continuous_control/halfcheetah/evolution/sNES_best_overall_return.png) |
+**Demo**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/snes.gif" width="480" alt="sNES demo">
+
+**Learning curve**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/sNES_best_overall_return.png" width="560" alt="sNES learning curve">
 
 ### MAP-Elites (CMA-MAE)
 
@@ -156,10 +170,17 @@ The **training best fitness** is from the final archive re-evaluation inside
 `MAP-Elites.py` (every elite averaged over 10 episodes). The **evaluation return** is
 a separate `test_all.py map-elites evaluate --best` run on the saved archive.
 
-| Artifact | Path |
-|----------|------|
-| Training curve (`qd/best_fitness` vs env steps) | [`MAP-Elites_best_fitness.png`](../../../results/continuous_control/halfcheetah/evolution/MAP-Elites_best_fitness.png) |
-| Archive heatmap | [`MAP_Elites_heatmap_final.png`](../../../results/continuous_control/halfcheetah/evolution/MAP_Elites_heatmap_final.png) |
+**Demo**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/map_elites.gif" width="480" alt="MAP-Elites demo">
+
+**Learning curve**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/MAP-Elites_best_fitness.png" width="560" alt="MAP-Elites learning curve">
+
+**Archive heatmap**
+
+<img src="../../../results/continuous_control/halfcheetah/evolution/MAP_Elites_heatmap_final.png" width="480" alt="MAP-Elites archive heatmap">
 
 More detail on evolution trainers (run commands, `test_all.py`, NES variants):
 [`evolution/README.md`](evolution/README.md).

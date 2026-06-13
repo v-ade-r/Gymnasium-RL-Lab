@@ -53,6 +53,14 @@ single-episode finalists plus the distribution mean, each averaged over 30 episo
 the distribution mean won (2,343.5 ± 502.8). The **evaluation return** is a separate
 `test_all.py cmaes` run on the saved checkpoint.
 
+**Demo**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/cmaes.gif" width="480" alt="CMA-ES demo">
+
+**Learning curve**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/CMA-ES_best_overall_return.png" width="560" alt="CMA-ES learning curve">
+
 ### sNES
 
 | Metric | Value |
@@ -71,6 +79,14 @@ The **training return** is from the final re-evaluation inside `NES.py`: top 10
 single-episode finalists plus the distribution mean, each averaged over 30 episodes;
 `finalist_6` won (2,950.2 ± 237.5). The **evaluation return** is a separate
 `test_all.py nes` run on the saved checkpoint (2,990.0 ± 66.3; min 2,877.2, max 3,103.4).
+
+**Demo**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/snes.gif" width="480" alt="sNES demo">
+
+**Learning curve**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/sNES_best_overall_return.png" width="560" alt="sNES learning curve">
 
 ### MAP-Elites (CMA-MAE)
 
@@ -94,6 +110,18 @@ lower return than sNES/CMA-ES is expected. The product is the behavior map
 The **training best fitness** is from the final archive re-evaluation inside
 `MAP-Elites.py` (every elite averaged over 10 episodes). The **evaluation return** is
 a separate `test_all.py map-elites evaluate --best` run on the saved archive.
+
+**Demo**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/map_elites.gif" width="480" alt="MAP-Elites demo">
+
+**Learning curve**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/MAP-Elites_best_fitness.png" width="560" alt="MAP-Elites learning curve">
+
+**Archive heatmap**
+
+<img src="../../../../results/continuous_control/halfcheetah/evolution/MAP_Elites_heatmap_final.png" width="480" alt="MAP-Elites archive heatmap">
 
 Because these experiments use a single seed and are not hyperparameter-tuned for
 leaderboard scores, the results demonstrate that the implementations work, not

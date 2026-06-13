@@ -31,6 +31,14 @@ The following result comes from a single educational training run and should not
 
 Because this experiment uses a single seed and is not hyperparameter-tuned for leaderboard scores, the result is meant to demonstrate that the implementation works, not to establish a state-of-the-art comparison.
 
+**Demo**
+
+<img src="../../../results/discrete_control/lunar_lander/ppo_lunar_lander.gif" width="480" alt="LunarLander PPO demo">
+
+**Learning curve**
+
+<img src="../../../results/discrete_control/lunar_lander/ppo_learning_curve.png" width="560" alt="PPO learning curve">
+
 ## Outputs
 
 Learning curves saved to [`results/discrete_control/lunar_lander/`](../../../results/discrete_control/lunar_lander/):

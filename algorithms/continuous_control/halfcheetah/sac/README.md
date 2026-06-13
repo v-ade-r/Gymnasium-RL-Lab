@@ -26,6 +26,14 @@ The following result comes from a single educational training run and should not
 
 Because this experiment uses a single seed and is not hyperparameter-tuned for leaderboard scores, the result is meant to demonstrate that the implementation works, not to establish a state-of-the-art comparison.
 
+**Demo**
+
+<img src="../../../../results/continuous_control/halfcheetah/sac/sac.gif" width="480" alt="SAC demo">
+
+**Learning curve**
+
+<img src="../../../../results/continuous_control/halfcheetah/sac/sac_avg_return_100.png" width="560" alt="SAC learning curve">
+
 ## Visualizing results
 
 After training, evaluate and record a demo:
