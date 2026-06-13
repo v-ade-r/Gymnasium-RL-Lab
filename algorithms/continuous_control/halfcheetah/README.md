@@ -4,9 +4,9 @@ Three paradigms on the same MuJoCo locomotion task:
 
 | Approach | Folder | Policy type |
 |----------|--------|---------------|
-| SAC | [`sac/`](sac/) | Stochastic, entropy-regularized |
-| PPO | [`ppo/`](ppo/) | Gaussian, clipped updates |
-| Evolution | [`evolution/`](evolution/) | Deterministic MLP, no gradients |
+| SAC | [`sac/`](sac/) | Stochastic policy, entropy-regularized off-policy updates |
+| PPO | [`ppo/`](ppo/) | Gaussian policy, clipped on-policy updates |
+| Evolution | [`evolution/`](evolution/) | Deterministic MLP policy, gradient-free optimization |
 
 HalfCheetah trainers log to W&B project **`gymnasium-rl-lab`**. How to train, evaluate, and
 record demos is documented in each folder's README (linked below).
@@ -27,6 +27,25 @@ not be interpreted as statistically robust benchmarks.
 committed in this repo under `results/continuous_control/halfcheetah/` were **exported
 manually from W&B** (not from those matplotlib outputs) — they match the charts logged
 during training and are kept here as static portfolio artifacts.
+
+### At a glance
+
+| Algorithm | Paradigm | Training steps | Best reported return | Policy | Learning Curves |
+|-----------|----------|---------------:|---------------------:|--------|-----------------|
+| SAC | Off-policy RL | 3M | 15,199 ± 63 (eval) | MLP 256×256 | <img src="../../../results/continuous_control/halfcheetah/sac/sac_avg_return_100.png" width="120" alt="SAC learning curve"> |
+| PPO | On-policy RL | 10M | 8,669 ± 86 (eval) | MLP 256×256 | <img src="../../../results/continuous_control/halfcheetah/ppo/ppo_avg_return.png" width="120" alt="PPO learning curve"> |
+| CMA-ES | Evolution | 20M | 2,141 ± 880 (eval) | MLP 32×32 | <img src="../../../results/continuous_control/halfcheetah/evolution/CMA-ES_best_overall_return.png" width="120" alt="CMA-ES learning curve"> |
+| sNES | Evolution | 20M | 2,990 ± 66 (eval) | MLP 32×32 | <img src="../../../results/continuous_control/halfcheetah/evolution/sNES_best_overall_return.png" width="120" alt="sNES learning curve"> |
+| MAP-Elites | Evolution / Quality-Diversity | 50M | 1,644 ± 751 (eval) | MLP 32×32 | <img src="../../../results/continuous_control/halfcheetah/evolution/MAP-Elites_best_fitness.png" width="120" alt="MAP-Elites learning curve"> |
+
+Deep RL (SAC, PPO) reaches the highest returns with larger networks and gradient-based
+updates. Evolution methods use a compact MLP (32×32, d ≈ 1.8k) rather than the 256×256
+policies above — a deliberate choice to keep the search space small under local hardware
+constraints (population-based trainers evaluate many candidates per generation and are far
+more memory- and compute-intensive per step than a single gradient update). Lower returns
+are therefore expected; MAP-Elites in particular trades peak performance for a diverse
+behavior archive. None of these runs are multi-seed benchmarks; they document working
+implementations on the same environment.
 
 ### SAC
 
@@ -144,19 +163,3 @@ a separate `test_all.py map-elites evaluate --best` run on the saved archive.
 
 More detail on evolution trainers (run commands, `test_all.py`, NES variants):
 [`evolution/README.md`](evolution/README.md).
-
-## At a glance
-
-| Algorithm | Paradigm | Training steps | Best reported return | Policy |
-|-----------|----------|---------------:|---------------------:|--------|
-| SAC | Off-policy RL | 3M | 15,199 ± 63 (eval) | MLP 256×256 |
-| PPO | On-policy RL | 10M | 8,669 ± 86 (eval) | MLP 256×256 |
-| CMA-ES | Evolution | 20M | 2,141 ± 880 (eval) | MLP 32×32 |
-| sNES | Evolution | 20M | 2,990 ± 66 (eval) | MLP 32×32 |
-| MAP-Elites | Quality-diversity | 50M | 1,644 ± 751 (eval) | MLP 32×32 |
-
-Deep RL (SAC, PPO) reaches the highest returns with larger networks and gradient-based
-updates. Evolution methods use a much smaller policy and far fewer parameters to optimize,
-so lower scores are expected — MAP-Elites in particular trades peak performance for a
-behavior archive. None of these runs are multi-seed benchmarks; they document working
-implementations on the same environment.
