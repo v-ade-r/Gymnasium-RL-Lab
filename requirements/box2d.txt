@@ -1,0 +1,2 @@
+-r base.txt
+gymnasium[box2d]>=1.0

@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Training artifacts (commit demos to results/; checkpoints live in models/ or W&B)
+wandb/
+videos/
+*.pth
+*.npz
+*.pkl
+results/**/*.txt
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
