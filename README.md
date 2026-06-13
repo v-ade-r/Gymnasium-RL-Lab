@@ -1,4 +1,4 @@
-# gymnasium-rl-lab
+# Gymnasium-RL-Lab
 
 Educational reinforcement learning portfolio built with [Gymnasium](https://gymnasium.farama.org/).  
 Algorithms are grouped by environment and paradigm — from tabular methods to deep RL and evolution.
@@ -28,12 +28,12 @@ bash scripts/smoke_test.sh
 
 ## Project hub
 
-| Level | Environment | Algorithms | Folder | Result |
-|-------|-------------|------------|--------|--------|
-| Tabular | FrozenLake-v1 | Q-learning, SARSA | [`algorithms/tabular/frozen_lake/`](algorithms/tabular/frozen_lake/) | [ε-greedy curves](results/tabular/frozen_lake/) |
-| Discrete PG | LunarLander-v3 | PPO mini-batch | [`algorithms/discrete_control/lunar_lander/`](algorithms/discrete_control/lunar_lander/) | [landing demo](results/discrete_control/lunar_lander/) |
-| Continuous RL | HalfCheetah-v5 | SAC, PPO | [`algorithms/continuous_control/halfcheetah/sac/`](algorithms/continuous_control/halfcheetah/sac/), [`ppo/`](algorithms/continuous_control/halfcheetah/ppo/) | [SAC demo](results/continuous_control/halfcheetah/sac/) |
-| Evolution | HalfCheetah-v5 | CMA-ES, NES, MAP-Elites | [`algorithms/continuous_control/halfcheetah/evolution/`](algorithms/continuous_control/halfcheetah/evolution/) | [archive heatmap](results/continuous_control/halfcheetah/evolution/) |
+| Method Type | Environment | Algorithms | Folder | Demo |
+|-------|-------------|------------|--------|------|
+| Tabular | FrozenLake-v1 | Q-learning, SARSA | [`frozen_lake/`](algorithms/tabular/frozen_lake/) | <img src="results/tabular/frozen_lake/q_learning.gif" width="120" alt="Q-learning"> <img src="results/tabular/frozen_lake/sarsa.gif" width="120" alt="SARSA"> |
+| Discrete Control | LunarLander-v3 | PPO mini-batch | [`lunar_lander/`](algorithms/discrete_control/lunar_lander/) | <img src="results/discrete_control/lunar_lander/ppo_lunar_lander.gif" width="160" alt="LunarLander PPO"> |
+| Continuous Control | HalfCheetah-v5 | SAC, PPO | [`sac/`](algorithms/continuous_control/halfcheetah/sac/), [`ppo/`](algorithms/continuous_control/halfcheetah/ppo/) | <img src="results/continuous_control/halfcheetah/sac/sac.gif" width="120" alt="SAC"> <img src="results/continuous_control/halfcheetah/ppo/ppo.gif" width="120" alt="PPO"> |
+| Evolution | HalfCheetah-v5 | CMA-ES, NES, MAP-Elites | [`evolution/`](algorithms/continuous_control/halfcheetah/evolution/) | <img src="results/continuous_control/halfcheetah/evolution/MAP_Elites_heatmap_final.png" width="160" alt="MAP-Elites archive"> |
 
 On HalfCheetah, [`sac/`](algorithms/continuous_control/halfcheetah/sac/) and [`ppo/`](algorithms/continuous_control/halfcheetah/ppo/) implement the same environment with different continuous-control paradigms; the SAC sources include **`[SAC vs PPO]`** inline comments for a direct comparison — see [`halfcheetah/README.md`](algorithms/continuous_control/halfcheetah/README.md).
 
